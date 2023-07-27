@@ -1,0 +1,49 @@
+{% extends 'StudentApp/base.html' %}
+{% load static %}
+
+
+
+
+
+<!-- CSS block  -->
+
+{% block css %}
+{% endblock css %}
+
+<!-- js block  -->
+
+{% block js %}
+{% endblock js %}
+
+<!-- title block  -->
+{% block title %}
+<title>Staff Details Page</title>
+{% endblock title %}
+
+<!-- body block  -->
+{% block body %}
+
+<div class="container mt-5 py-4" style="background-color: bisque;">
+    <div class="container p-3  text-center rounded" style="background-color:beige; border: 2px dashed black;">
+        <h1 class="display-6">All Staff Page</h1>
+    </div>
+
+    <div class="container p-5 mt-5 w-75 shadow" style="background-color:darkgray;">
+    {% for data in data %}
+    <div class="container p-3 shadow rounded my-3" style="background-color:white;">
+        <h1>{{data.f_name}} {{data.l_name}}</h1>
+        View all information --><a href="{% url 'staff' data.id %}" style="text-decoration: none;">{{data.contact}}</a>
+        
+
+        <div class="mt-3 ">
+            <a href="{% url 'staffupdate' data.id %}" class="btn btn-outline-info">Update</a>
+        </div>
+        
+    </div>
+    
+    {% endfor %}
+</div>
+    
+</div>
+
+{% endblock body %}

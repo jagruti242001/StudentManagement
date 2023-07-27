@@ -1,0 +1,112 @@
+{% extends 'StudentApp/base.html' %}
+{% load static %}
+
+
+
+
+
+<!-- CSS block  -->
+
+{% block css %}
+{% endblock css %}
+
+<!-- js block  -->
+
+{% block js %}
+{% endblock js %}
+
+<!-- title block  -->
+{% block title %}
+<title>Feedback Page</title>
+{% endblock title %}
+
+<!-- body block  -->
+{% block body %}
+
+<div class="container mt-5 py-4" style="background-color: bisque;">
+    <div class="container p-3  text-center rounded" style="background-color:beige; border: 2px dashed black;">
+        <h1 class="display-6">Feedback Page</h1>
+    </div>
+
+    <div class="container text-center  shadow mt-4" style="background-color:darkgrey; ">
+    <div class="mb-3">
+        <div class="row">
+            <div class="col-4 p-2 border border-dark">
+                 <h3>Name</h3>
+
+            </div>
+            <div class="col-8 p-2 border-dark border">
+               <h3> Feedback</h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <div class="container text-center shadow mt-4" style="background-color:cornsilk;">
+        {% for fb in feedback %}
+        <div class="mb-3">
+            <div class="row border-end border-bottom border-dark">
+                <div class="col-4 border-end border-dark ">
+                     <h3>{{fb.name}} </h3>
+
+                </div>
+                <div class="col-8  ">
+                    {{fb.feedback}}
+                </div>
+            </div>
+        </div>
+
+        {% endfor %}
+    </div>
+
+    <div class="container px-2 text-center">
+        <img src="{% static 'StudentApp/images/feedback.png/' %}" alt="No image" height="400px" width="1000px" style="border: 2px solid black;">
+    </div>
+
+</div>
+
+<div class="container border-top border-dark mt-5">
+
+    <div class="container mt-5" >
+    
+    <div class="row" >
+    
+    <div class="col-4 border-end">
+        <h3 class="mb-4">About us</h3>
+        <p>A Student Management System is also known as a Student Information System (SIS). These systems work to coordinate scheduling and communications between faculty regarding students. This system exists to simplify information tracking for both parents and administrative staff.</p>
+    
+        <a href="{% url 'aboutus' %}" style="text-decoration: none;">Learn More <i class="bi bi-arrow-right"></i></a>
+    </div>
+    
+    <div class="col-4 text-center border-end" >
+    
+        <h3 class="mb-4">Menu</h3>
+        <p><a href="{% url 'home' %}" style="text-decoration: none; color: black;">Home</a></p>
+        <p><a href="{% url 'registration' %}" style="text-decoration: none; color: black;">Student Registration</a></p>
+        <p><a href="{% url 'staffregistration' %}" style="text-decoration: none; color: black;">Staff Registration</a></p>
+        <p><a href="{% url 'adminlogin' %}" style="text-decoration: none; color: black;">Admin Login</a> </p>
+        <p><a href="{% url 'feedback' %}" style="text-decoration: none; color: black;">Feedback</a> </p>
+        <p><a href="{% url 'contactus' %}" style="text-decoration: none; color: black;">Contact us</a> </p>
+        <p><a href="{% url 'aboutus' %}" style="text-decoration: none; color: black;">About Us</a> </p>
+    
+    
+    </div>
+    
+    <div class="col-4 text-center" 
+    
+        <h3 class="mb-4">Contact Us</h3>
+        Phone Number: 
+        <h6>9158176742</h6>
+        Email ID:
+        <h6>jagrutibhande242001@gmail.com</h6>
+    
+    
+    </div>
+    
+    
+    
+    </div>
+    </div>
+    </div>
+{% endblock body %}

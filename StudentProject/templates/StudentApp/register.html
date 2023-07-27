@@ -1,0 +1,110 @@
+{% extends 'StudentApp/base.html' %}
+{% load static %}
+
+
+<!-- css block  -->
+{% block css %}
+
+{% endblock css %}
+
+<!-- js block  -->
+
+{% block js %}
+
+{% endblock js %}
+
+
+<!-- title block  -->
+
+{% block title %}
+<title>Registration Pages</title>
+
+{% endblock title %}
+
+<!-- body block  -->
+
+{% block body %}
+
+<div class="container mt-5 text-center"><h1>Registration Page</h1></div>
+
+<div class="container text-center my-5 border border-dark">
+    
+    <div class="row">
+    <div class=" col-4 my-3">
+
+        <img src="{% static 'StudentApp/images/student2.png' %}" alt="No Images" width="200px" height="200px">
+
+    </div>
+    <div class="col-8 my-5 border-start">
+        
+            
+        
+        <p><a href="{% url 'studentlogin' %}" class="btn btn-outline-primary w-25">Student Login</a></p>    
+        
+        <p><a href="{% url 'registration' %}" class="btn btn-outline-success w-25">Registration as Student</a></p>
+
+    
+    </div>
+
+</div>
+<div class="row border-top">
+    <div class=" col-4 my-3">
+        <img src="{% static 'StudentApp/images/staff.png' %}" alt="No Images" width="200px" height="200px">
+        
+    </div>
+
+    <div class="col-8 my-5 border-start">
+
+        <p><a href="{% url 'stafflogin' %}" class="btn btn-outline-primary w-25">Staff Login</a></p>
+        
+        <p><a href="{% url 'staffregistration' %}" class="btn btn-outline-success w-25">Registration As Staff</a></p>
+    </div>
+
+</div>
+</div>
+
+<div class="container border-top border-dark mt-3">
+
+    <div class="container mt-5" >
+    
+    <div class="row" >
+    
+    <div class="col-4 border-end">
+        <h3 class="mb-4">About us</h3>
+        <p>A Student Management System is also known as a Student Information System (SIS). These systems work to coordinate scheduling and communications between faculty regarding students. This system exists to simplify information tracking for both parents and administrative staff.</p>
+    
+        <a href="{% url 'aboutus' %}" style="text-decoration: none;">Learn More <i class="bi bi-arrow-right"></i></a>
+    </div>
+    
+    <div class="col-4 text-center border-end" >
+    
+        <h3 class="mb-4">Menu</h3>
+        <p><a href="{% url 'home' %}" style="text-decoration: none; color: black;">Home</a></p>
+        <p><a href="{% url 'registration' %}" style="text-decoration: none; color: black;">Student Registration</a></p>
+        <p><a href="{% url 'staffregistration' %}" style="text-decoration: none; color: black;">Staff Registration</a></p>
+        <p><a href="{% url 'adminlogin' %}" style="text-decoration: none; color: black;">Admin Login</a> </p>
+        <p><a href="{% url 'feedback' %}" style="text-decoration: none; color: black;">Feedback</a> </p>
+        <p><a href="{% url 'contactus' %}" style="text-decoration: none; color: black;">Contact us</a> </p>
+        <p><a href="{% url 'aboutus' %}" style="text-decoration: none; color: black;">About Us</a> </p>
+    
+    
+    </div>
+    
+    <div class="col-4 text-center" 
+    
+        <h3 class="mb-4">Contact Us</h3>
+        Phone Number: 
+        <h6>9158176742</h6>
+        Email ID:
+        <h6>jagrutibhande242001@gmail.com</h6>
+    
+    
+    </div>
+    
+    
+    
+    </div>
+    </div>
+    </div>
+
+{% endblock body %}

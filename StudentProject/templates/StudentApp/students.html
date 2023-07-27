@@ -1,0 +1,60 @@
+{% extends 'StudentApp/base.html' %}
+{% load static %}
+
+
+
+
+
+<!-- CSS block  -->
+
+{% block css %}
+{% endblock css %}
+
+<!-- js block  -->
+
+{% block js %}
+{% endblock js %}
+
+<!-- title block  -->
+{% block title %}
+<title>Student Page</title>
+{% endblock title %}
+
+<!-- body block  -->
+{% block body %}
+
+
+
+<div class="container ">
+    <div class=" container mb-3 " style="text-align: left;"></div>
+    <a href="{% url 'studentDetails' %}" class="btn btn-outline-danger"><i class="bi bi-arrow-bar-left">Back</i></a>
+    
+<h1 class="mt-5 p-3 rounded shadow text-center" style="background-color:darkcyan; border: 3px dashed black; color: white;">{{data.f_name}} {{data.l_name}}</h1>
+
+</div>
+</div>
+
+<div class="container w-50 p-5 text-center mt-5" style="background-color:lightsteelblue; border: 1px solid black;">
+    <p>First Name: {{data.f_name}}</p>
+    <p>Last Name: {{data.l_name}}</p>
+    <p>Email ID: {{data.email}}</p>
+    <p>Contact No: {{data.contact}}</p>
+    <p>DOB: {{data.dob}}</p>
+    <p>Address: {{data.address}}</p>
+    <p>Gender: {{data.gender}}</p>
+    <p>Course: {{data.course}}</p>
+    <p>Department: {{data.department}}</p>
+    <p>City: {{data.city}}</p>
+    <p>State: {{data.state}}</p>
+    <p>Pincode: {{data.pincode}}</p>
+    <p>Hobbies: {{data.hobbies}}</p>
+    <p>Blood Group: {{data.blood_group}}</p>
+    <p>Known language: {{data.known_language}}</p>
+    <p>Education: {{data.education}}</p>
+    <p>Why You Want to become a student of our college: {{data.why_you_want}}</p>
+    
+</div>
+
+
+
+{% endblock body %}

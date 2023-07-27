@@ -1,0 +1,47 @@
+{% extends 'StudentApp/base.html' %}
+{% load static %}
+
+
+
+
+
+<!-- CSS block  -->
+
+{% block css %}
+{% endblock css %}
+
+<!-- js block  -->
+
+{% block js %}
+{% endblock js %}
+
+<!-- title block  -->
+{% block title %}
+<title>Staff Page</title>
+{% endblock title %}
+
+<!-- body block  -->
+{% block body %}
+
+<div class="container">
+    <h1 class="mt-5 p-3 rounded shadow text-center" style="background-color:darkcyan; border: 3px dashed black; color: white;">{{data.f_name}} {{data.l_name}}</h1>
+
+</div>
+
+
+<div class="container w-50 p-5 text-center mt-5" style="background-color:lightsteelblue; border: 1px solid black;">
+    <p>First Name: {{data.f_name}}</p>
+    <p>Last Name: {{data.l_name}}</p>
+    <p>Contact No: {{data.contact}}</p>
+    <p>DOB: {{data.dob}}</p>
+    <p>Present Address: {{data.present_address}}</p>
+    <p>Permenant Address: {{data.permenant_address}}</p>
+    <p>Education: {{data.education}}</p>
+    <p>Project Done: {{data.project_done}}</p>
+    <p>Salary Expectations: {{data.salary_expectations}}</p>
+    <p>Material Status: {{data.material_status}}</p>
+    
+    
+</div>
+
+{% endblock body %}

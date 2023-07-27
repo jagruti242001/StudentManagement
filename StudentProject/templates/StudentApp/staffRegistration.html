@@ -1,0 +1,67 @@
+{% extends 'StudentApp/base.html' %}
+{% load static %}
+
+
+<!-- css block  -->
+{% block css %}
+
+{% endblock css %}
+
+<!-- js block  -->
+
+{% block js %}
+
+{% endblock js %}
+
+
+<!-- title block  -->
+
+{% block title %}
+<title>Staff Registration Page</title>
+
+{% endblock title %}
+
+<!-- body block  -->
+
+{% block body %}
+
+<div class="container my-5 " style="border: 1px solid black; background-color: bisque;" >
+    
+    <!-- heading  -->
+    <div class="container p-3 bg-secondary text-center mt-3 rounded" style="border: 1px solid black;">
+        <h1 class="display-5">Staff Register Page</h1>
+    </div>
+
+    <div class="container my-5 w-50 p-5 shadow " style="border: 1px solid black; background-color: darkcyan;">
+
+        <form action="{% url 'staffregistration' %}" method="POST">
+            {% csrf_token %}
+
+            {% for fm in forms %}   
+
+            <div class="mb-3 row">
+                <div class="col-6" style="text-align: right;">
+                {{fm.label_tag}}
+            </div>
+            <div class="col-6">
+
+
+                {{fm}}
+                <span style="color: red;">{{fm.errors | striptags}}</span>
+            </div>
+            </div>
+
+
+            {% endfor %}
+
+            <div class="mb-3 text-center">
+                <input type="submit" value="Register" class="btn btn-success btn-lg">
+            </div>
+        </form>
+
+    </div>
+
+    
+</div>
+
+{% endblock body %}

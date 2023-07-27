@@ -1,0 +1,132 @@
+{% extends 'StudentApp/base.html' %}
+{% load static %}
+
+
+
+
+
+<!-- CSS block  -->
+
+{% block css %}
+{% endblock css %}
+
+<!-- js block  -->
+
+{% block js %}
+
+<script>
+    $(document).ready(function(){
+        $('#id_dob').datepicker({
+            changeMonth:true,
+            changeYear:true,
+            yearRange:'1970:2049'
+        });
+    });
+</script>
+{% endblock js %}
+
+<!-- title block  -->
+{% block title %}
+<title>Admin login Page</title>
+{% endblock title %}
+
+<!-- body block  -->
+{% block body %}
+
+<!-- main container  -->
+<div class="container mt-5 " style="border: 1px solid black;">
+    
+    <div class="row px-3 my-5">
+        <!-- left section  -->
+        <div class="col-7">
+            <!-- image section  -->
+            <div>
+                <h1 class="display-4">Student Management system</h1>
+            <img class="mt-3" style="border: 3px dashed black;" src="{% static 'StudentApp/images/sign.jpg' %}" alt="no image" height="350px" width="700px">
+            </div>
+
+        
+        </div>
+
+        <!-- right section  -->
+
+        <div class="col-5 mt-5">
+            <div class="shadow rounded p-5" style="background-color: bisque;">
+                <div class="my-5">
+                    <form action="{% url 'signin' %}" method="post">
+                        {% csrf_token %}
+                        <!-- widgt comes from backend  -->
+                        {% for fm in forms %}
+
+                        <div class="mb-3">
+                            {{fm.label_tag}}
+                            {{fm}}
+                            <span style="color:red;">{{fm.errors}}</span>
+                        </div>
+
+                        {% endfor %}
+
+
+                        <div class="mb-3 text-center">
+                            <input type="submit" value="login" class="btn btn-outline-primary btn-lg">
+                        </div>
+                    </form>
+                </div>
+
+                
+            </div>
+        </div>
+        
+    </div>
+
+
+    
+
+
+   
+</div>
+
+<div class="container border-top border-dark mt-5">
+
+    <div class="container mt-5" >
+    
+    <div class="row" >
+    
+    <div class="col-4 border-end">
+        <h3 class="mb-4">About us</h3>
+        <p>A Student Management System is also known as a Student Information System (SIS). These systems work to coordinate scheduling and communications between faculty regarding students. This system exists to simplify information tracking for both parents and administrative staff.</p>
+    
+        <a href="{% url 'aboutus' %}" style="text-decoration: none;">Learn More <i class="bi bi-arrow-right"></i></a>
+    </div>
+    
+    <div class="col-4 text-center border-end" >
+    
+        <h3 class="mb-4">Menu</h3>
+        <p><a href="{% url 'home' %}" style="text-decoration: none; color: black;">Home</a></p>
+        <p><a href="{% url 'registration' %}" style="text-decoration: none; color: black;">Student Registration</a></p>
+        <p><a href="{% url 'staffregistration' %}" style="text-decoration: none; color: black;">Staff Registration</a></p>
+        <p><a href="{% url 'adminlogin' %}" style="text-decoration: none; color: black;">Admin Login</a> </p>
+        <p><a href="{% url 'feedback' %}" style="text-decoration: none; color: black;">Feedback</a> </p>
+        <p><a href="{% url 'contactus' %}" style="text-decoration: none; color: black;">Contact us</a> </p>
+        <p><a href="{% url 'aboutus' %}" style="text-decoration: none; color: black;">About Us</a> </p>
+    
+    
+    </div>
+    
+    <div class="col-4 text-center" 
+    
+        <h3 class="mb-4">Contact Us</h3>
+        Phone Number: 
+        <h6>9158176742</h6>
+        Email ID:
+        <h6>jagrutibhande242001@gmail.com</h6>
+    
+    
+    </div>
+    
+    
+    
+    </div>
+    </div>
+    </div>
+{% endblock body %}

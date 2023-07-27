@@ -1,0 +1,88 @@
+{% extends 'StudentApp/base.html' %}
+{% load static %}
+
+
+
+
+
+<!-- CSS block  -->
+
+{% block css %}
+{% endblock css %}
+
+<!-- js block  -->
+
+{% block js %}
+
+{% endblock js %}
+
+<!-- title block  -->
+{% block title %}
+<title>contact us Page</title>
+{% endblock title %}
+
+<!-- body block  -->
+{% block body %}
+
+<div class="container mt-5 py-4" style="background-color: bisque;">
+    <div class="container p-3  text-center rounded" style="background-color:beige; border: 2px dashed black;">
+        <h1 class="display-6">Contact us Page</h1>
+    </div>
+
+</div>
+
+<div class="container mt-5 shadow p-5 w-50" style="border: 1px solid black; background-color: darkgray;">
+    <h2>Email ID</h2>
+    <p>jagrutibhande242001@gmail.com</p>
+    <h2>Contact Number:</h2>
+    <p>9158176742</p>
+</div>
+
+
+<div class="container border-top border-dark mt-3">
+
+    <div class="container mt-5" >
+    
+    <div class="row" >
+    
+    <div class="col-4 border-end">
+        <h3 class="mb-4">About us</h3>
+        <p>A Student Management System is also known as a Student Information System (SIS). These systems work to coordinate scheduling and communications between faculty regarding students. This system exists to simplify information tracking for both parents and administrative staff.</p>
+    
+        <a href="{% url 'aboutus' %}" style="text-decoration: none;">Learn More <i class="bi bi-arrow-right"></i></a>
+    </div>
+    
+    <div class="col-4 text-center border-end" >
+    
+        <h3 class="mb-4">Menu</h3>
+        <p><a href="{% url 'home' %}" style="text-decoration: none; color: black;">Home</a></p>
+        <p><a href="{% url 'registration' %}" style="text-decoration: none; color: black;">Student Registration</a></p>
+        <p><a href="{% url 'staffregistration' %}" style="text-decoration: none; color: black;">Staff Registration</a></p>
+        <p><a href="{% url 'adminlogin' %}" style="text-decoration: none; color: black;">Admin Login</a> </p>
+        <p><a href="{% url 'feedback' %}" style="text-decoration: none; color: black;">Feedback</a> </p>
+        <p><a href="{% url 'contactus' %}" style="text-decoration: none; color: black;">Contact us</a> </p>
+        <p><a href="{% url 'aboutus' %}" style="text-decoration: none; color: black;">About Us</a> </p>
+    
+    
+    </div>
+    
+    <div class="col-4 text-center" 
+    
+        <h3 class="mb-4">Contact Us</h3>
+        Phone Number: 
+        <h6>9158176742</h6>
+        Email ID:
+        <h6>jagrutibhande242001@gmail.com</h6>
+    
+    
+    </div>
+    
+    
+    
+    </div>
+    </div>
+    </div>
+
+
+{% endblock body %}
+

@@ -1,0 +1,55 @@
+{% extends 'StudentApp/staffBase.html' %}
+{% load static %}
+
+
+
+
+
+<!-- CSS block  -->
+
+{% block css %}
+{% endblock css %}
+
+<!-- js block  -->
+
+{% block js %}
+
+{% endblock js %}
+
+<!-- title block  -->
+{% block title %}
+<title>Staff Home Page</title>
+{% endblock title %}
+
+<!-- body block  -->
+{% block body %}
+
+
+<div class="container mt-5 py-4" style="background-color: bisque;">
+
+    
+    
+    <div class="container p-3  text-center rounded" style="background-color:beige; border: 2px dashed black;">
+        <h1 class="display-6">Staff Home Page</h1>
+    </div>
+    
+    <p class="container border border-dark mt-5" style="background-color: aquamarine;"><b>Note: </b> This is page of staff information. All the staffs are given information on this. If you want to see your information, you can see your information by clicking on the contact on your information.</p>
+
+    {% for d in data %}
+    <div class="container p-3 my-3 shadow rounded mt-5" style="background-color:white;">
+        
+        <h1>{{d.f_name}} {{d.l_name}}</h1>
+        <a style="text-decoration: none;" href="{% url 'staffprofile' d.id %}">Contact No: {{d.contact}}</a>
+        
+
+        
+        
+    </div>
+    
+    {% endfor %}
+
+    
+
+</div>
+
+{% endblock body %}

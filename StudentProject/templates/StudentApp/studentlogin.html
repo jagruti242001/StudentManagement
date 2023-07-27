@@ -1,0 +1,57 @@
+{% extends 'StudentApp/base.html' %}
+{% load static %}
+
+
+
+
+
+<!-- CSS block  -->
+
+{% block css %}
+{% endblock css %}
+
+<!-- js block  -->
+
+{% block js %}
+{% endblock js %}
+
+<!-- title block  -->
+{% block title %}
+<title>Student login Page</title>
+{% endblock title %}
+
+<!-- body block  -->
+{% block body %}
+
+<div class=" mt-5 text-center">
+    <div class="container w-50 p-3 " style="background-color:darkgrey; border: 1px solid black;">
+        <h1>Student Login</h1>
+    </div>
+    <div class="container w-50 shadow rounded mt-5 p-5 " style="border: 2px solid black;">
+        <div class="container w-50 text-center">
+            <form action="{% url 'studentHome' %}" method="post">
+                {% csrf_token %}
+                <!-- widgt comes from backend  -->
+                <div class="my-3">
+                    <label for="email">Enter Student Email</label>
+                    <input type="email" name="email" id="email" class="form-control" value="{{form.email}}">
+                </div>
+
+                <div class="my-3">
+                    <label for="password">Enter Password</label>
+                    
+                    <input type="password" name="password" id="password" class="form-control" value="{{form.password}}">
+                </div>
+
+
+                <div class="mb-3 text-center">
+                    <input type="submit" value="login" class="btn btn-outline-primary btn-lg">
+                </div>
+            </form>
+        </div>
+        
+        </div>
+</div>
+
+
+{% endblock body %}

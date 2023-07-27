@@ -1,0 +1,123 @@
+{% extends 'StudentApp/base.html' %}
+{% load static %}
+
+
+
+
+
+<!-- CSS block  -->
+
+{% block css %}
+{% endblock css %}
+
+<!-- js block  -->
+
+{% block js %}
+
+<script>
+    function deletestudent(){
+        var ch = confirm('Are you sure delete this data')
+        if (ch == true){
+        return true;
+        }
+        else{
+            return false;
+        }
+    };
+</script>
+
+{% endblock js %}
+
+<!-- title block  -->
+{% block title %}
+<title>Leave Page</title>
+{% endblock title %}
+
+<!-- body block  -->
+{% block body %}
+
+<div class="container mt-5 py-4" style="background-color: bisque;">
+    <div class="container p-3  text-center rounded" style="background-color:beige; border: 2px dashed black;">
+        <h1 class="display-6">Leave Page</h1>
+    </div>
+
+    <div class="container text-center  shadow mt-4" style="background-color:cadetblue; ">
+        
+            <div class="row" style="border: 1px solid black;">
+                <div class="col-8 border-end border-dark">
+                    <div class="row py-3">
+                        <div class="col-1 border-end border-dark" ><h4>Id</h4></div>
+                        <div class="col-3  border-end border-dark"><h4>Name</h4></div>
+                        <div class="col-3 border-end border-dark"><h4>Email ID</h4></div>
+                        <div class="col-2 border-end border-dark"><h4>Contact</h4></div>
+                        <div class="col-3 "><h4>Course</h4></div>
+                    </div>
+                     
+    
+                </div>
+                <div class="col-4 mt-2">
+                   <h3> Reason for leave</h3>
+                </div>
+            </div>
+        
+    </div>
+
+    <div class="container text-center shadow mt-4" style="background-color:rgb(123, 209, 212);">
+        {% for leave in leave %}
+        
+            <div class="row">
+                <!-- left section  -->
+                <div class="col-8">
+                    <div class="row">
+
+                        <div class="col-1  my-3 border-end border-bottom border-dark">
+                            <h6>{{leave.id}}</h6>
+
+                        </div>
+
+                        <div class="col-3  my-3 border-end border-bottom border-dark">
+                            <h6>{{leave.f_name}} {{leave.l_name}}</h6>
+
+                        </div>
+
+                        <div class="col-3  my-3 border-end border-bottom border-dark">
+                            <h6>{{leave.email}}</h6>
+
+                        </div>
+
+                        <div class="col-2  my-3  border-end border-bottom border-dark">
+                            <h6>{{leave.contact}}</h6>
+
+                        </div>
+
+                        <div class="col-3 my-3 border-end border-bottom border-dark">
+                            <h6>{{leave.course}} ({{leave.department}}) </h6>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- right section  -->
+                
+                <div class="col-3 my-3 border-bottom border-dark">
+                    
+                    <h3 class="lead">{{leave.reason}}</h3>
+                </div>
+
+                <div class="col-1">
+                    <form action="{% url 'deletestudent' leave.id %}" method="'post" style="display:inline-block ;" onsubmit="return deletestudent()">
+                        {% csrf_token %}
+    
+                        <input type="submit" value="Delete" class="btn btn-outline-danger mt-2">
+    
+                    </form> 
+                </div>  
+            </div>
+        
+
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

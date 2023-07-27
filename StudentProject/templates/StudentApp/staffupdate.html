@@ -1,0 +1,85 @@
+{% extends 'StudentApp/base.html' %}
+{% load static %}
+
+
+
+<!-- blocks  -->
+
+{% block css %}
+{% endblock css %}
+
+<!-- js block  -->
+
+{% block js %}
+{% endblock js %}
+
+<!-- title block  -->
+{% block title %}
+{% endblock title %}
+
+<!-- body block  -->
+{% block body %}
+
+<!-- main div  -->
+
+<div class="container">
+
+    <!-- heading  -->
+
+    <div class="container p-3 mt-5 text-center shadow rounded" style="background-color: cadetblue;  border: 3px dashed black;">
+
+        <h1 class="display-5">Update Staff </h1>
+    </div>
+
+    <!-- add blog form  -->
+    <div class="container p-5 my-5 w-75 shadow" style="background-color: blanchedalmond; border: 1px solid black;">
+
+        <div class="container text-center">
+        
+        
+       
+            <h2 style="text-decoration: underline;">{{data.f_name}} {{data.l_name}}</h2>
+        </div>
+        <!-- form  -->
+
+        <form action="{% url 'staffupdate' data.id %}" method='POST'>
+            {% csrf_token %}
+
+
+        
+            <div class="my-3">
+                <h6><label for="contact">Update contact :</label></h6>
+                <input type="text" name="contact" id="contact" class="form-control" value="{{data.contact}}">
+            </div>
+
+            <div class="my-3">
+                <h6><label for="present_address">Update Present address :</label></h6>
+                <input type="text" name="present_address" id="present_address" class="form-control" value="{{data.present_address}}">
+            </div>
+
+
+            <div class="my-3">
+                <h6><label for="project_done">Update Project done :</label></h6>
+                <input type="text" name="project_done" id="project_done" class="form-control" value="{{data.project_done}}">
+            </div>
+            
+            
+
+            <div class="my-3">
+                <h6><label for="education">Update education :</label></h6>
+                <input type="text" name="education" id="education" class="form-control" value="{{data.education}}">
+            </div>
+            
+
+                <div class="my-3">
+                    <input type="submit" value="Update Staff" class="btn btn-outline-success">
+                    <a href="{% url 'home' %}" class="btn btn-outline-warning" >Cancel</a>
+
+                </div>
+        </form>
+
+
+    </div>
+
+</div>
+{% endblock body %}

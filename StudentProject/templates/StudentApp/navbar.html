@@ -1,0 +1,83 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" style="background-color: aquamarine;">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'home' %}"><i class="bi bi-house"></i></a>
+        </li>
+        
+        
+        {% if user.is_authenticated is False %} 
+
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'register' %}">User Login <i class="bi bi-person-workspace"></i></a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'adminlogin' %}">Admin Login <i class="bi bi-person-workspace"></i></a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'fees' %}">Fees<i class="bi bi-currency-rupee"></i></a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'feedback' %}">Feedback <i class="bi bi-info-circle-fill"></i></a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'contactus' %}">Contact Us <i class="bi bi-whatsapp"></i></a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'aboutus' %}">About Us <i class="bi bi-info-circle-fill"></i></a>
+        </li>
+
+        
+        {% else %}
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'studentDetails' %}">Student Details</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'staffDetails' %}">Staff Details</a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'feedback' %}">View Feedback</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'leave' %}">View apply for leave</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'signout' %}">Logout</a>
+        </li>
+        
+
+       
+
+       
+
+        {% endif %}
+      </ul>
+        
+
+
+      
+    </div>
+  </div>
+  
+</nav>

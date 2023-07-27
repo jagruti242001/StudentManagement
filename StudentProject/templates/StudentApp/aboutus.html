@@ -1,0 +1,93 @@
+{% extends 'StudentApp/base.html' %}
+{% load static %}
+
+
+
+
+
+<!-- CSS block  -->
+
+{% block css %}
+{% endblock css %}
+
+<!-- js block  -->
+
+{% block js %}
+
+{% endblock js %}
+
+<!-- title block  -->
+{% block title %}
+<title>About us Page</title>
+{% endblock title %}
+
+<!-- body block  -->
+{% block body %}
+<div class="container mt-5 py-4" style="background-color: bisque;">
+    <div class="container p-3  text-center rounded" style="background-color:beige; border: 2px dashed black;">
+        <h1 class="display-6">About us Page</h1>
+    </div>
+
+</div>
+
+<div class="container mt-5 w-75" style="text-align: justify;" >
+    <h3 class="text-center my-3">Student Management System</h3>
+<p>A Student Management System is also known as a Student Information System (SIS). These systems work to coordinate scheduling and communications between faculty regarding students. This system exists to simplify information tracking for both parents and administrative staff.
+
+    SMS acts as the bottom line database to store all the day-to-day school operations, maintain the proper records of the past few decades, regulate the various operation modules, managing the critical tasks, efficiently handling the administrative processes
+     Schools and Universities are the foundation of knowledge and an educational body on which students rely upon. Therefore, they need to maintain a proper database of its students to keep all the updated records and easily share information with students.
+    
+    Most schools and Universities count on an advanced software tool knows as 'Student Information System (SIS)' to keep all their student records and administrative operations including, examinations, attendance, and other activities.
+    
+    Over the recent years, the performance and efficiency of the education industry have been enhanced by using the Student Management System. This tool has productively taken over the workload of the admin department with its well-organized, easy, and reliable online school management software.</p>
+</div>
+
+<div class="container text-center">
+    <img src="{% static 'StudentApp/images/sms3.png' %}" alt="No image">
+</div>
+
+<div class="container border-top border-dark mt-3">
+
+    <div class="container mt-5" >
+    
+    <div class="row" >
+    
+    <div class="col-4 border-end">
+        <h3 class="mb-4">About us</h3>
+        <p>A Student Management System is also known as a Student Information System (SIS). These systems work to coordinate scheduling and communications between faculty regarding students. This system exists to simplify information tracking for both parents and administrative staff.</p>
+    
+        <a href="{% url 'aboutus' %}" style="text-decoration: none;">Learn More <i class="bi bi-arrow-right"></i></a>
+    </div>
+    
+    <div class="col-4 text-center border-end" >
+    
+        <h3 class="mb-4">Menu</h3>
+        <p><a href="{% url 'home' %}" style="text-decoration: none; color: black;">Home</a></p>
+        <p><a href="{% url 'registration' %}" style="text-decoration: none; color: black;">Student Registration</a></p>
+        <p><a href="{% url 'staffregistration' %}" style="text-decoration: none; color: black;">Staff Registration</a></p>
+        <p><a href="{% url 'adminlogin' %}" style="text-decoration: none; color: black;">Admin Login</a> </p>
+        <p><a href="{% url 'feedback' %}" style="text-decoration: none; color: black;">Feedback</a> </p>
+        <p><a href="{% url 'contactus' %}" style="text-decoration: none; color: black;">Contact us</a> </p>
+        <p><a href="{% url 'aboutus' %}" style="text-decoration: none; color: black;">About Us</a> </p>
+    
+    
+    </div>
+    
+    <div class="col-4 text-center" 
+    
+        <h3 class="mb-4">Contact Us</h3>
+        Phone Number: 
+        <h6>9158176742</h6>
+        Email ID:
+        <h6>jagrutibhande242001@gmail.com</h6>
+    
+    
+    </div>
+    
+    
+    
+    </div>
+    </div>
+    </div>
+
+{% endblock body %}

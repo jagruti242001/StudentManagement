@@ -1,0 +1,65 @@
+{% extends 'StudentApp/base.html' %}
+{% load static %}
+
+
+
+
+
+<!-- CSS block  -->
+
+{% block css %}
+{% endblock css %}
+
+<!-- js block  -->
+
+{% block js %}
+{% endblock js %}
+
+<!-- title block  -->
+{% block title %}
+<title>student Details Page</title>
+{% endblock title %}
+
+<!-- body block  -->
+{% block body %}
+
+<div class="container mt-5 py-4" style="background-color: bisque;">
+
+    <div class="mb-3 " style="text-align: left;">
+        <a href="{% url 'adminlogin' %}" class="btn btn-outline-dark"><i class="bi bi-arrow-bar-left">Back</i></a>
+    </div>
+
+
+
+    
+    <div class="container p-3  text-center rounded" style="background-color:beige; border: 2px dashed black;">
+        <h1 class="display-6">All Students Page</h1>
+    </div>
+
+
+    <div class="container p-5 mt-5 w-75 shadow" style="background-color:darkgray;">
+    {% for d in data %}
+    <div class="container p-3 my-3 shadow rounded mt-5" style="background-color:white;">
+        
+        <h1>{{d.f_name}} {{d.l_name}}</h1>
+        View all information --> <a href="{% url 'students' d.id %}" style="text-decoration: none; color: blue;">{{d.email}}</a>
+        
+
+        <div class="mt-3 ">
+            <a href="{% url 'update' d.id %}" class="btn btn-outline-info">Update</a>
+        </div>
+        
+    </div>
+    
+    {% endfor %}
+</div>
+
+    
+
+</div>
+
+
+
+
+
+{% endblock body %}

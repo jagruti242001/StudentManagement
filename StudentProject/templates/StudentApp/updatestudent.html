@@ -1,0 +1,95 @@
+{% extends 'StudentApp/base.html' %}
+{% load static %}
+
+
+
+<!-- blocks  -->
+
+{% block css %}
+{% endblock css %}
+
+<!-- js block  -->
+
+{% block js %}
+{% endblock js %}
+
+<!-- title block  -->
+{% block title %}
+{% endblock title %}
+
+<!-- body block  -->
+{% block body %}
+
+<!-- main div  -->
+
+<div class="container">
+
+    <!-- heading  -->
+
+    <div class="container p-3 mt-5 text-center shadow rounded" style="background-color: cadetblue;  border: 3px dashed black;">
+
+        <h1 style="color: white;">Update Students </h1>
+    </div>
+
+    <!-- add staff form  -->
+    <div class="container p-5 my-5 w-75 shadow" style="background-color: blanchedalmond; border: 1px solid black;">
+
+        <div class="container text-center">
+        
+        
+       
+            <h2 class="mb-5" style="text-decoration: underline;">{{data.f_name}} {{data.l_name}}</h2>
+        </div>
+        <!-- form  -->
+
+        <form action="{% url 'update' data.id %}" method='POST'>
+            {% csrf_token %}
+
+
+            <div class="my-3">
+                <h6><label for="email">Update email :</label></h6>
+                <input type="text" name="email" id="email" class="form-control" value="{{data.email}}">
+            </div>
+            <div class="my-3">
+                <h6><label for="contact">Update contact :</label></h6>
+                <input type="text" name="contact" id="contact" class="form-control" value="{{data.contact}}">
+            </div>
+
+            <div class="my-3">
+                <h6><label for="address">Update address :</label></h6>
+                <input type="text" name="address" id="address" class="form-control" value="{{data.address}}">
+            </div>
+
+
+            <div class="my-3">
+                <h6><label for="course">Update course :</label></h6>
+                <input type="text" name="course" id="course" class="form-control" value="{{data.course}}">
+            </div>
+            <div class="my-3">
+                <h6><label for="department">Update department :</label></h6>
+                <input type="text" name="department" id="department" class="form-control"
+                    value="{{data.department}}">
+            </div>
+            <div class="my-3">
+                <h6><label for="city">Update city :</label></h6>
+                <input type="text" name="city" id="city" class="form-control" value="{{data.city}}">
+            </div>
+
+            <div class="my-3">
+                <h6><label for="education">Update education :</label></h6>
+                <input type="text" name="education" id="education" class="form-control" value="{{data.education}}">
+            </div>
+            
+
+                <div class="my-3">
+                    <input type="submit" value="Update Student" class="btn btn-outline-success">
+                    <a href="{% url 'studentDetails' %}" class="btn btn-outline-warning" >Cancel</a>
+
+                </div>
+        </form>
+
+
+    </div>
+
+</div>
+{% endblock body %}
